@@ -26,6 +26,8 @@ function renderEvents() {
 }
 
 function deleteEvent(index) {
-  events.splice(index, 1)
-  renderEvents()
+  if (confirm("Do you want to delete this event?")) {
+    events.splice(index, 1)
+    renderEvents()
+  }
 }
