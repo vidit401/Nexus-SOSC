@@ -25,7 +25,16 @@ function renderEvents() {
   })
 }
 
+// function deleteEvent(index) {
+//   events.splice(index, 1)
+//   renderEvents()
+// }
 function deleteEvent(index) {
-  events.splice(index, 1)
-  renderEvents()
+    const confirmDelete = confirm("Are you sure you want to delete this event?");
+    
+    if (confirmDelete) {
+        events.splice(index, 1);
+        displayEvents();
+    }
 }
+
