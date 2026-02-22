@@ -29,3 +29,7 @@ function deleteEvent(index) {
   events.splice(index, 1)
   renderEvents()
 }
+
+function changeTheme(){
+  document.body.classList.toggle("dark");
+}
