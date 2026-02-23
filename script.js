@@ -1,6 +1,9 @@
 let events = []
 
 function addEvent() {
+  let nameInput=document.getElementById("eventName");
+  let dateInput=document.getElementById("eventDate");
+
   let name = document.getElementById("eventName").value
   let date = document.getElementById("eventDate").value
 
@@ -9,7 +12,10 @@ function addEvent() {
     return
   }
 
+
   events.push({ name, date })
+  nameInput.value="";
+  dateInput.value="";
   renderEvents()
 }
 
