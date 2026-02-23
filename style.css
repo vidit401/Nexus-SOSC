@@ -1,26 +1,139 @@
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Background with soft glow ===== */
 body {
-  font-family: Arial;
-  background: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.25), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.12), transparent 60%),
+    #020617;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* ===== Center container ===== */
+.container {
+  max-width: 520px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* ===== Title ===== */
+h1 {
   text-align: center;
+  margin-bottom: 28px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
 }
 
+/* ===== Form Card ===== */
 .form {
-  margin: 20px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
+/* ===== Inputs ===== */
 input {
-  padding: 8px;
-  margin: 5px;
+  width: 100%;
+  padding: 13px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(2, 6, 23, 0.85);
+  color: white;
+  font-size: 14px;
 }
 
+input::placeholder {
+  color: #64748b;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.7);
+}
+
+/* ===== Button ===== */
 button {
-  padding: 8px 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
   cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* ===== Event List ===== */
+ul {
+  list-style: none;
+  margin-top: 22px;
+}
+
+/* hide empty bar when no events */
+ul:empty {
+  display: none;
+}
+
+/* ===== Event Card ===== */
+li {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(10px);
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Delete Button ===== */
+li button {
+  background: rgba(239, 68, 68, 0.18);
+  color: #f87171;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  white-space: nowrap;
+  width: auto;
+}
+
+li button:hover {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fecaca;
+}
+
+li button:hover {
+  background: #dc2626;
+}
+
+/* ===== Past events ===== */
+.past-event {
+  opacity: 0.45;
 }
 
 li {
-  background: white;
-  margin: 8px;
-  padding: 10px;
-  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
