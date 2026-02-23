@@ -14,6 +14,9 @@ function addEvent() {
 }
 
 function renderEvents() {
+  events.sort(function(a,b){
+    return new Date(a.date)- new Date(b.date)
+  });
   let list = document.getElementById("eventList")
   list.innerHTML = ""
 
