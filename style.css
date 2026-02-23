@@ -24,3 +24,21 @@ li {
   padding: 10px;
   list-style: none;
 }
+
+.past-event {
+  opacity: 0.5;
+}
+
+.completed-label {
+  margin-left: 10px;
+  color: green;
+  font-weight: bold;
+}
+.past-event {
+  opacity: 0.5;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #333;
+}
