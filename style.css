@@ -14,13 +14,28 @@ input {
 }
 
 button {
+  background-color: black;
   padding: 8px 12px;
   cursor: pointer;
+  color: white;
 }
 
 li {
-  background: white;
+  background: rgb(230, 66, 66);
+  color: white;
   margin: 8px;
   padding: 10px;
   list-style: none;
+}
+.dark{
+  background-color: black;
+  color: white;
+}
+.dark button{
+  background-color: rgb(202, 59, 59);
+  color: white;
+}
+.dark li{
+  background-color: white;
+  color: black;
 }
