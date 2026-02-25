@@ -24,6 +24,17 @@ function renderEvents() {
     list.appendChild(li)
   })
 }
+function checkInputs(){
+  let name=document.getElementById("eventName").value
+  let date=document.getElementById("eventDate").value
+  let addBtn=document.getElementById("addBtn")
+  if(name.trim()!=="" && date.trim()!==""){
+    addBtn.disabled=false
+  }else{
+    addBtn.disabled=true
+  }
+}
+
 
 function deleteEvent(index) {
   let confirmDel=confirm("Are you sure you want to delete this event? ")

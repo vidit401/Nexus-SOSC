@@ -9,9 +9,9 @@
 <h1>College Event Manager</h1>
 
 <div class="form">
-  <input id="eventName" placeholder="Event name">
-  <input id="eventDate" type="date">
-  <button onclick="addEvent()">Add Event</button>
+  <input id="eventName" placeholder="Event name" oninput="checkInputs()">
+  <input id="eventDate" type="date" oninput="checkInputs()">
+  <button onclick="addEvent()" id="addBtn" disabled>Add Event</button>
 </div>
 
 <ul id="eventList"></ul>
