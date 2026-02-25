@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>College Event Manager</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>College Event Manager</h1>
+  <button id="themeToggle" class="theme-toggle">🌙</button>
 
-<div class="form">
-  <input id="eventName" placeholder="Event name">
-  <input id="eventDate" type="date">
-  <button onclick="addEvent()">Add Event</button>
-</div>
+  <div class="container">
+    <h1>College Event Manager</h1>
 
-<ul id="eventList"></ul>
+    <div class="form">
+      <input id="eventName" placeholder="Event name">
+      <input id="eventDate" type="date">
+      <button onclick="addEvent()">Add Event</button>
+    </div>
 
-<script src="script.js"></script>
+    <ul id="eventList"></ul>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
