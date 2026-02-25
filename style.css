@@ -1,26 +1,147 @@
+/* ===== Theme Variables ===== */
+:root {
+  --bg: #020617;
+  --card: #0f172a;
+  --text: #e5e7eb;
+  --input-bg: #020617;
+  --accent: #3b82f6;
+  --border: #1e293b;
+}
+
+/* Light mode */
+.light-mode {
+  --bg: #f4f4f4;
+  --card: #ffffff;
+  --text: #0f172a;
+  --input-bg: #ffffff;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+}
+
+/* ===== Page ===== */
 body {
-  font-family: Arial;
-  background: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.form {
-  margin: 20px;
-}
+/* ===== Toggle Button (TOP RIGHT) ===== */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 999;
 
-input {
-  padding: 8px;
-  margin: 5px;
-}
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 
-button {
-  padding: 8px 12px;
+  padding: 6px 10px;
+  font-size: 16px;
   cursor: pointer;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  transition: 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+/* ===== Layout Container ===== */
+.container {
+  max-width: 460px;
+  margin: 60px auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+/* ===== Form Container ===== */
+.form {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Inputs ===== */
+input {
+  padding: 10px;
+  margin: 6px;
+  width: calc(100% - 24px);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* ===== Event List ===== */
+ul {
+  padding: 0;
+  max-width: 420px;
+  margin: auto;
 }
 
 li {
-  background: white;
-  margin: 8px;
-  padding: 10px;
+  background: var(--card);
+  margin: 10px 0;
+  padding: 14px;
+  border-radius: 12px;
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border);
+}
+
+/* ===== Delete Button ===== */
+li button {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+li button:hover {
+  background: rgba(239, 68, 68, 0.25);
+}
+
+/* ===== Past Events ===== */
+.past-event {
+  opacity: 0.45;
+}
+
+h1 {
+  margin-bottom: 18px;
 }
