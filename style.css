@@ -1,14 +1,21 @@
+
+/* SETTING THE VALUES OF MARGIN AND PADDING WITH BOX-SIZING TO THE WHOLE PAGE */
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;  
 }
 
+/* STYLING THE BODY TAG */
+
 body {
   font-family: Arial;
   text-align: center;
   background-image: linear-gradient(to right, rgb(116, 116, 255) 0%, rgb(224, 112, 131) 100%);
 }
+
+/* STYLED THE WRAPPER DIV  */
 
 #wrapper{
   display: flex;
@@ -19,10 +26,14 @@ body {
   max-width: 100%;
 }
 
+/* SET MARGIN AND COLOR OF THE HEADING  */
+
 #heading{
   margin: 20px;
   color: white;
 }
+
+/* ADDED CSS STYLING TO THE FORM CLASS */
 
 .form {
   display: flex;
@@ -37,6 +48,8 @@ body {
   height: 200px;
 }
 
+/* STYLED THE INPUT BOX OF THE FORM */
+
 input {
   padding: 12px;
   margin: 5px;
@@ -44,6 +57,8 @@ input {
   border: none;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* STYLED THE BUTTONS OF THE FORM */
 
 button {
   padding: 8px 12px;
@@ -55,12 +70,16 @@ button {
   font-weight: bold;
 }
 
+/* ADDED THE HOVER EFFECT TO THE FORM BUTTONS */
+
 button:hover{
   background-image: linear-gradient(to right, rgb(67, 67, 173) 0%, rgb(189, 77, 96) 100%);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   color: white;
   font-weight: bold;
 }
+
+/* STYLED THE LI TAG */
 
 li {
   background-image: linear-gradient(to right, rgb(184, 184, 202) 0%, rgb(255, 186, 216) 100%);
@@ -76,9 +95,13 @@ li {
   gap: 15px;
 }
 
+/* STYLED THE EVENTNAME */
+
 #eventName{
   margin-bottom: 10px;
 }
+
+/* ADDED CSS STYLING TO EVENTDATE */
 
 #eventDate{
   margin-bottom: 15px;
