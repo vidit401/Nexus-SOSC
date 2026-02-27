@@ -34,3 +34,25 @@ function deleteEvent(index) {
   }
 
 }
+
+function clearAllEvents() {
+  if (events.length === 0) {
+    alert("No events to clear!");
+    return;
+  }
+  if (confirm("Delete ALL events? This cannot be undone.")) {
+    events = [];  // Clear array
+    renderEvents();
+  }
+}
+
+function sortEvents() {
+  if (events.length <= 1) {
+    alert("Need at least 2 events to sort!");
+    return;
+  }
+  events.sort((a, b) => new Date(a.date) - new Date(b.date));  // Sort by date
+  renderEvents();
+}
+
+
