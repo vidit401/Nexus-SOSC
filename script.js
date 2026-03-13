@@ -1,5 +1,5 @@
 let events = []
-let editIndex=-1
+let editIndex = -1
 
 function addEvent() {
   let name = document.getElementById("eventName").value
@@ -9,15 +9,15 @@ function addEvent() {
     alert("Please fill all fields")
     return
   }
-  if (editIndex==-1){
+
+  if (editIndex == -1) {
     events.push({ name, date })
-
-  }else{
-    events[editIndex]={name,date}
-    editIndex=-1
+  } else {
+    events[editIndex] = { name, date }
+    editIndex = -1
   }
-  clearInputs()
 
+  clearInputs()
   renderEvents()
 }
 
@@ -27,29 +27,34 @@ function renderEvents() {
 
   events.forEach((event, index) => {
     let li = document.createElement("li")
+
     li.innerHTML = `${event.name} - ${event.date} 
       <button onclick="deleteEvent(${index})">Delete</button>
       <button onclick="editevent(${index})">Edit</button>`
+
     list.appendChild(li)
   })
 }
 
-function editevent(index){
-  let event=events[index]
-  document.getElementById("eventName").value=event.name
-  document.getElementById("eventDate").value=event.date
-  editIndex=index
+function editevent(index) {
+  let event = events[index]
+
+  document.getElementById("eventName").value = event.name
+  document.getElementById("eventDate").value = event.date
+
+  editIndex = index
 }
+
 function deleteEvent(index) {
-  let confirmDel=confirm("Are you sure you want to delete this event? ")
-  if(confirmDel){
+  let confirmDel = confirm("Are you sure you want to delete this event?")
+
+  if (confirmDel) {
     events.splice(index, 1)
     renderEvents()
-
   }
-
 }
-function clearInputs(){
-  document.getElementById("eventName").value="";
-  document.getElementById("eventDate").value="";
+
+function clearInputs() {
+  document.getElementById("eventName").value = ""
+  document.getElementById("eventDate").value = ""
 }
