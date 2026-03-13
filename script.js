@@ -1,4 +1,5 @@
 let events = []
+let editIndex = -1
 
 function addEvent() {
   let name = document.getElementById("eventName").value
@@ -9,7 +10,14 @@ function addEvent() {
     return
   }
 
-  events.push({ name, date })
+  if (editIndex == -1) {
+    events.push({ name, date })
+  } else {
+    events[editIndex] = { name, date }
+    editIndex = -1
+  }
+
+  clearInputs()
   renderEvents()
 }
 
@@ -19,40 +27,34 @@ function renderEvents() {
 
   events.forEach((event, index) => {
     let li = document.createElement("li")
+
     li.innerHTML = `${event.name} - ${event.date} 
-      <button onclick="deleteEvent(${index})">Delete</button>`
+      <button onclick="deleteEvent(${index})">Delete</button>
+      <button onclick="editevent(${index})">Edit</button>`
+
     list.appendChild(li)
   })
 }
 
+function editevent(index) {
+  let event = events[index]
+
+  document.getElementById("eventName").value = event.name
+  document.getElementById("eventDate").value = event.date
+
+  editIndex = index
+}
+
 function deleteEvent(index) {
-  let confirmDel=confirm("Are you sure you want to delete this event? ")
-  if(confirmDel){
+  let confirmDel = confirm("Are you sure you want to delete this event?")
+
+  if (confirmDel) {
     events.splice(index, 1)
     renderEvents()
-
-  }
-
-}
-
-function clearAllEvents() {
-  if (events.length === 0) {
-    alert("No events to clear!");
-    return;
-  }
-  if (confirm("Delete ALL events? This cannot be undone.")) {
-    events = [];  // Clear array
-    renderEvents();
   }
 }
 
-function sortEvents() {
-  if (events.length <= 1) {
-    alert("Need at least 2 events to sort!");
-    return;
-  }
-  events.sort((a, b) => new Date(a.date) - new Date(b.date));  // Sort by date
-  renderEvents();
+function clearInputs() {
+  document.getElementById("eventName").value = ""
+  document.getElementById("eventDate").value = ""
 }
-
-
