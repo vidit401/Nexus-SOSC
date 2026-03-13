@@ -50,6 +50,6 @@ function deleteEvent(index) {
 
 }
 function clearInputs(){
-  document.getElementById("eventName").value="";
-  document.getElementById("eventDate").value="";
+  document.getElementById("eventName").value=""
+  document.getElementById("eventDate").value=""
 }
