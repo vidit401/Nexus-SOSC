@@ -1,36 +1,48 @@
-let events = []
+var events = [];
 
 function addEvent() {
-  let name = document.getElementById("eventName").value
-  let date = document.getElementById("eventDate").value
+  var name = document.getElementById("eventName").value;
+  var date = document.getElementById("eventDate").value;
 
-  if (name === "" || date === "") {
-    alert("Please fill all fields")
-    return
+  if (name == "" || date == "") {
+    alert("Please fill in both fields.");
+    return;
   }
 
-  events.push({ name, date })
-  renderEvents()
-}
+  var event = { name: name, date: date };
+  events.push(event);
 
-function renderEvents() {
-  let list = document.getElementById("eventList")
-  list.innerHTML = ""
+  document.getElementById("eventName").value = "";
+  document.getElementById("eventDate").value = "";
 
-  events.forEach((event, index) => {
-    let li = document.createElement("li")
-    li.innerHTML = `${event.name} - ${event.date} 
-      <button onclick="deleteEvent(${index})">Delete</button>`
-    list.appendChild(li)
-  })
+  showEvents();
 }
 
 function deleteEvent(index) {
-  let confirmDel=confirm("Are you sure you want to delete this event? ")
-  if(confirmDel){
-    events.splice(index, 1)
-    renderEvents()
+  events.splice(index, 1);
+  showEvents();
+}
 
+function showEvents() {
+  var list = document.getElementById("eventList");
+  list.innerHTML = "";
+
+  if (events.length == 0) {
+    list.innerHTML = "<p class='no-events'>No events yet. Add one above!</p>";
+    return;
   }
 
+  for (var i = 0; i < events.length; i++) {
+    var card = document.createElement("div");
+    card.className = "event-card";
+
+    card.innerHTML =
+      "<div class='event-info'>" +
+      "<h3>" + events[i].name + "</h3>" +
+      "<p>" + events[i].date + "</p>" +
+      "</div>" +
+      "<button onclick='deleteEvent(" + i + ")'>Delete</button>";
+
+    list.appendChild(card);
+  }
 }

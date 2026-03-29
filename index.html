@@ -1,21 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>College Event Manager</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Event Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College Event Manager</h1>
+      <p>Add and manage your college events easily</p>
+    </header>
 
-<h1>College Event Manager</h1>
+    <div class="container">
+      <div class="form-box">
+        <h2>Add New Event</h2>
+        <input type="text" id="eventName" placeholder="Event Name" />
+        <input type="date" id="eventDate" />
+        <button onclick="addEvent()">Add Event</button>
+      </div>
 
-<div class="form">
-  <input id="eventName" placeholder="Event name">
-  <input id="eventDate" type="date">
-  <button onclick="addEvent()">Add Event</button>
-</div>
+      <div class="events-box">
+        <h2>Upcoming Events</h2>
+        <div id="eventList">
+          <p class="no-events">No events yet. Add one above!</p>
+        </div>
+      </div>
+    </div>
 
-<ul id="eventList"></ul>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

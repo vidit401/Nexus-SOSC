@@ -1,26 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial;
-  background: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+header {
+  background-color: #4a90d9;
+  color: white;
+  padding: 20px;
   text-align: center;
 }
 
-.form {
-  margin: 20px;
+header h1 {
+  font-size: 28px;
 }
 
-input {
-  padding: 8px;
-  margin: 5px;
+header p {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #dce9f7;
 }
 
-button {
-  padding: 8px 12px;
+.container {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.form-box {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+
+.form-box h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #4a90d9;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 11px;
+  background-color: #4a90d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-li {
-  background: white;
-  margin: 8px;
-  padding: 10px;
-  list-style: none;
+.form-box button:hover {
+  background-color: #357abd;
+}
+
+.events-box h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.event-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-card .event-info h3 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.event-card .event-info p {
+  font-size: 13px;
+  color: #777;
+}
+
+.event-card button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.event-card button:hover {
+  background-color: #c0392b;
+}
+
+.no-events {
+  text-align: center;
+  color: #aaa;
+  font-size: 15px;
+  padding: 20px;
 }
